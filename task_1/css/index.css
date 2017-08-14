@@ -1,0 +1,40 @@
+
+html body{
+	margin: 0;
+}
+
+.layout { 
+	width: 980px; 
+	margin: auto;
+	height: ; 
+}
+
+.nav, .content, .sidebar { 
+	float: left;
+	height: 100%;
+  }
+
+.nav { 
+  	width: 180px; 
+  	background: #7895A4; 
+  	color: #FFF; 
+ }
+
+ .content { 
+	width: 600px; 
+	background: #F0EAD6; 
+}
+
+.sidebar { 
+	width: 200px; 
+	background: #C38A6D; 
+	color: #FFE; 
+}
+
+#footor{
+	background-color:black;
+	color: white;
+	width: 980px;
+	position: absolute;
+	bottom: 0; 
+}
