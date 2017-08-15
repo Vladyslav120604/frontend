@@ -1,0 +1,114 @@
+html body{
+	margin: 0;
+}
+
+#menu{
+	float: right;
+	width: 1706px; 
+	margin:0 auto;
+}
+
+
+body, html {
+	/*font: 90%/160% Arial, Helvetica, sans-serif;*/
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	background-color: #1abc9c;
+
+}
+
+
+/* меню */
+
+header{
+	font-size: 14px;
+	width: 1706px;
+	max-width: 96%;
+	margin: 0 auto;
+	height: 84px;	
+}
+
+.nav ul {
+	margin: 0;
+	padding: 0;
+}
+.nav li {
+	
+	line-height: 84px;
+	font-size: 20px;
+	padding: 0;
+	list-style: none;
+	display: inline-block;
+	*display:inline;
+
+}
+
+.projects{
+	margin-left: 20px;
+}
+
+.nav a {
+	margin:0 0 0 70px;
+	text-align: center;
+	padding:0;
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+	line-height: 30px;
+}
+
+/* меню справа */
+.nav.right ul {
+	text-align: right;
+}
+
+
+#go:hover, #go1:hover{
+	background-color: white;
+	color: #404046;
+}
+
+#header{
+	background-color: #fff;
+}
+
+#logo{
+	line-height: 84px;
+	font-size: 44px;
+	color:black;
+	font-weight: bold;
+	float: left;
+	margin:0;
+}
+
+#plus{
+	color: #1abc9c;
+}
+
+#content{
+	width: 1706px;
+	margin: 0 auto;
+}
+
+#content img{
+	width: 211px;
+	margin: 40px 255px 0 127px;
+	float: left;
+}
+
+#text #title{
+	font-size: 30px;
+	font-weight: bold;
+	padding: 100px 0 0 0;
+	margin-bottom: 95px;
+}
+
+#text #aboutProject{
+	font-size: 20px;
+	margin: 0;
+	line-height: 30px;
+}
+
+#text{
+	color: white;
+}
