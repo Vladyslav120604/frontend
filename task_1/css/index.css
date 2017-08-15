@@ -1,12 +1,27 @@
 
 html body{
 	margin: 0;
+	font-family: "Open Sans", sans-serif;
+}
+
+#header{
+	height: 50px;
+	width: 100%;
+	background: #334D5C;
+	color: white;
+	position: fixed;
+	top: 0;
+}
+
+#title{
+	margin: 100px 0 50px 0;
+	font-size: 35px;
 }
 
 .layout { 
-	width: 980px; 
+	width: 1020px; 
 	margin: auto;
-	height: ; 
+	height: 2000px; 
 }
 
 .nav, .content, .sidebar { 
@@ -16,25 +31,28 @@ html body{
 
 .nav { 
   	width: 180px; 
-  	background: #7895A4; 
-  	color: #FFF; 
+  	background: #e6e6e6;  
  }
 
  .content { 
+	margin-left: 20px;
 	width: 600px; 
-	background: #F0EAD6; 
+	background: none; 
 }
 
 .sidebar { 
+	margin-left: 20px;
 	width: 200px; 
-	background: #C38A6D; 
-	color: #FFE; 
+	background: #e6e6e6;  
 }
 
 #footor{
-	background-color:black;
+	/*width: 1920px;*/
+	width: 100%;
+	height: 50px;
+	background-color:#334D5C;
 	color: white;
-	width: 980px;
-	position: absolute;
+	position: fixed;
+	left: 0;
 	bottom: 0; 
 }
