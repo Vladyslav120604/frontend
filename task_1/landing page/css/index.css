@@ -110,6 +110,8 @@ header{
 	height: 500px;
 	background-color: white;
 	margin-top: 85px;
+	/*width: 1600px;
+	margin: 85px auto;*/
 }
 
 .het{
@@ -129,30 +131,13 @@ header{
 	margin-top: 45px;
 }
 
-/*
-#poi{
-	padding: 0;
-	display: inline-block;
-	float: right;
-	position: relative;
-}
-
-#poi li{
-	line-height: 84px;
-	font-size: 130px;
-	padding: 0;
-	list-style: none;
-	display: inline-block;
-	*display:inline;
-	margin: 0 370px 0 0;
-}
-*/
-100%
 .all{
 	position:relative;
 	height:50px;
 	/*margin: 0 auto;
 	width: 1706px;*/
+	width: 1600px;
+	margin: 85px auto;
 }
 #one{
 	float:left;
@@ -190,6 +175,7 @@ header{
 	width: 900px;
 	height: 50px;
 	font-size: 20px;
+	margin: 0 0 10px 0;
 }
 
 #contact_us #submit{
@@ -201,4 +187,10 @@ header{
 	color: white;
 	background: none;
 	font-size: 35px;
+}
+
+#coments{
+	width: 900px;
+	font-size: 20px;
+	height: 105px;
 }
