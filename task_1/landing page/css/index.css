@@ -1,20 +1,7 @@
 html body{
 	margin: 0;
-}
-
-#menu{
-	float: right;
-	width: 1706px; 
-	margin:0 auto;
-}
-
-
-body, html {
-	/*font: 90%/160% Arial, Helvetica, sans-serif;*/
 	font-family: 'Open Sans', sans-serif;
-	margin: 0;
 	background-color: #1abc9c;
-
 }
 
 
@@ -62,12 +49,6 @@ header{
 	text-align: right;
 }
 
-
-#go:hover, #go1:hover{
-	background-color: white;
-	color: #404046;
-}
-
 #header{
 	background-color: #fff;
 }
@@ -86,17 +67,18 @@ header{
 }
 
 #content{
+	max-width: 96%;
 	width: 1706px;
 	margin: 0 auto;
 }
 
 #content img{
-	width: 211px;
+	width: 311px;
 	margin: 40px 255px 0 127px;
 	float: left;
 }
 
-#text #title{
+#text #titleProject{
 	font-size: 30px;
 	font-weight: bold;
 	padding: 100px 0 0 0;
@@ -111,4 +93,112 @@ header{
 
 #text{
 	color: white;
+}
+
+#text #buy_now{
+	width: 213px;
+	height: 74px;
+	border: 2px solid white;
+	color: white;
+	font-size: 20px;
+	border-radius: 10px;
+	margin: 85px 0;
+	background-color:#1abc9c ;
+}
+
+#whiteBlock{
+	height: 500px;
+	background-color: white;
+	margin-top: 85px;
+}
+
+.het{
+	color:#1abc9c;
+	font-size: 130px;
+	margin-bottom: 45px;
+}
+
+ #whiteBlock .title{
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+#whiteBlock .all p{
+	font-size: 18px;
+	margin-top: 45px;
+}
+
+/*
+#poi{
+	padding: 0;
+	display: inline-block;
+	float: right;
+	position: relative;
+}
+
+#poi li{
+	line-height: 84px;
+	font-size: 130px;
+	padding: 0;
+	list-style: none;
+	display: inline-block;
+	*display:inline;
+	margin: 0 370px 0 0;
+}
+*/
+100%
+.all{
+	position:relative;
+	height:50px;
+	/*margin: 0 auto;
+	width: 1706px;*/
+}
+#one{
+	float:left;
+	width:33.33%;
+	height:50px;
+	text-align: center;
+}
+#two{
+	float:left;
+	width:33.33%;
+	height:50px;
+	text-align: center;
+}
+#three{
+	float:left;
+	width:33.33%;
+	height:50px;
+	text-align: center;
+}
+
+
+/* contact us */
+
+#contact_us{
+	color:white;
+	text-align: center;
+}
+
+#Tcontact_us{
+	font-size: 35px;
+	margin: 110px 0 85px 0 ;
+}
+
+#contact_us input{
+	width: 900px;
+	height: 50px;
+	font-size: 20px;
+}
+
+#contact_us #submit{
+	margin: 95px 0;
+	width: 356px;
+	height: 70px;
+	border-radius: 10px;
+	border: 2px solid white;
+	color: white;
+	background: none;
+	font-size: 35px;
 }
