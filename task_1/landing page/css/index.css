@@ -73,8 +73,9 @@ header{
 }
 
 #content img{
-	width: 311px;
-	margin: 40px 255px 0 127px;
+	width: 205px;
+	height: 435px;
+	margin: 60px 170px 0 270px;
 	float: left;
 }
 
@@ -102,14 +103,14 @@ header{
 	color: white;
 	font-size: 20px;
 	border-radius: 10px;
-	margin: 55px 0 65px 0;
+	margin: 55px 0 95px 0;
 	background-color:#1abc9c ;
 }
 
 #whiteBlock{
 	height: 400px;
 	background-color: white;
-	margin-top: 85px;
+	margin-top: 0;
 	padding-top: 30px;
 	/*width: 1600px;
 	margin: 85px auto;*/
@@ -195,7 +196,6 @@ header{
 	width: 590px;
 	font-size: 20px;
 	height: 120px;
-	color: red;
 	padding-left: 10px; 
 }
 
@@ -206,4 +206,12 @@ input::-webkit-input-placeholder {
 textarea::-webkit-input-placeholder {
     color: #757575;
 	font-family: "Open Sans";
-    } 
+    }
+textarea::-moz-placeholder{
+	color:#757575;
+	font-family: "Open sans";
+	}/* Firefox 19+ */
+input::-moz-placeholder{
+	color:#757575;
+	font-family: "Open sans";
+	}/* Firefox 19+ */
