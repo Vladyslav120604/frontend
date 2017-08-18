@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tesk_2/tas</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var summ = 0;
+		var i = -1000;
+		while(i < 1000){
+			var string = i + "";
+			var size = string.length;
+			if (string.charAt(size-1) == 3 || string.charAt(size-1) == 2 || string.charAt(size-1) == 7) {
+				summ = summ + i;
+			}
+		i++;
+		}
+		document.write("Сумма " + summ);
+	</script>
+</body>
+</html>
