@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="../../node_modules/moment/min/moment.min.js"></script>
+</head>
+<body>
+<input type="text" name="date" id="date">
+<input type="text" name="date" id="date2">
+<button onclick="main()">Send</button>
+<p>Время в между датами: <span id="res"></span></p>
+<script type="text/javascript">
+	function main() {
+		var time = document.getElementById('date').value;
+		var time2 = document.getElementById('date2').value;
+		time2 = Date.parse(time);
+		time = Date.parse(time2);
+		var result = time2 - time;
+		var second = result / 1000;
+		//var seconds = document.getElementById('second').value;
+		var y = Math.floor(second / (2592000 * 12));
+		var mn = Math.floor(second / (86400 * 30));
+		if(mn > 12){
+			mn = 0;
+		}
+		var d = Math.floor(second / 86400);
+		if(d > 30){
+			d = 0;
+		}
+		var h = Math.floor(second / 3600 % 3600);
+		if(h > 24){
+			h = 0;
+		}
+		var m = Math.floor(second / 60 % 60);
+		var s = second % 60;
+		/*if(s < 10){
+			y = "0" + y;
+			mn = "0" + mn;
+			d = "0" + d;
+			h = "0" + h;
+			m = "0" + m;
+			s = "0" + s;
+		}
+		else if(m < 10){
+			y = "0" + y;
+			mn = "0" + mn;
+			d = "0" + d;
+			h = "0" + h;
+			m = "0" + m;
+
+		}
+		else if(h < 10){
+			y = "0" + y;
+			mn = "0" + mn;
+			d = "0" + d;
+			h = "0" + h;
+		}
+		else if(d < 10){
+			y = "0" + y;
+			mn = "0" + mn;
+			d = "0" + d;
+		}
+		else if(mn < 10){
+			y = "0" + y;
+			mn = "0" + mn;
+		}
+		else if(y < 10){
+			y = "0" + y;
+		}*/
+		var resTime = y  +":" + mn + ":" + d + ":" + h + ":" + m + ":" + s;
+		document.getElementById('res').innerHTML = resTime;
+		
+		/*console.log(Date.parse(time)); */
+		//console.log(tt);
+
+	}
+	//console.log(moment("122212", "x").format("DD.MM.YYYY"));
+</script>
+</body>
+</html>

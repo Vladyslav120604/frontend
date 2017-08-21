@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task_7</title>
+</head>
+<body>
+	<p>Напишите дату в формате 12.06</p>
+	<p><input type="text" name="created" id="datatime"></p>
+	<input type="submit" name="dfg" onclick="main()">
+	<div id="img"></div>
+	<script type="text/javascript">
+		function main() {
+			var r = document.getElementById('datatime').value;
+			var y = new Date(r);
+			var d = y.getDate(y);
+			var m = y.getMonth(y);
+			console.log(m);
+			var dm = new Date(m);
+			var t = dm.getDate(dm);
+			console.log(t);
+		}
+	</script>
+</body>
+</html>

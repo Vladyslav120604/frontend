@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task_9</title>
+</head>
+<body>
+	<p>количевство етажей</p>
+	<input type="text" id="floor" value="4"><br>
+	<p>Количевство на лесничной клетке</p>
+	<input type="text" id="NumberOfApartments" value="2"><br>
+	<p>количество подъездов</p>
+	<input type="text" id="podezd" value="3"><br>
+	<p>квартира</p>
+	<input type="text" id="apartment"><br>
+	<button onclick="main()">dff</button><br>
+	<script type="text/javascript">
+		function main() {
+			var floor = document.getElementById('floor').value;
+			var NumberOfApartments = document.getElementById('NumberOfApartments').value;
+			var podezd = document.getElementById('podezd').value;
+			var coun = floor * NumberOfApartments * podezd;
+			var apartment = document.getElementById('apartment').value;
+			var i =0;
+			var etag = 0;
+			var a = 2;
+			while(i < coun){
+				//console.log(coun);
+				if(i == apartment){
+					console.log(etag + 1 + " //" );
+				}
+
+				else if(i == a){
+					etag++;
+					a = a + 2;
+					//console.log(i);
+				}
+				i++;
+			}
+		}
+	</script>
+</body>
+</html>

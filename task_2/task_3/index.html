@@ -3,11 +3,36 @@
 <head>
 	<title>task_2/task_3</title>
 </head>
+<style type="text/css">
+	li {
+    list-style-type: none;
+    margin: 0 auto; /* Убираем маркеры */
+   }
+   ol{
+   	padding: 0;
+   }
+</style>
 <body>
+	<ol id="list">
+		
+	</ol>
 	<script type="text/javascript">
-		document.write(5)
-		document.write(5)
-		document.write(5);
+		var i = 0;
+		while(i < 50){
+		var n = document.createElement("li");
+		var nOfStar = 0;
+		var star = i + 1 + " : ";
+		while(nOfStar <= i){
+			star = star + "*";
+			nOfStar++;
+
+		}
+		
+		n.innerHTML = star;
+		list.appendChild(n);
+		i++;
+		}
+		
 	</script>
 </body>
 </html>

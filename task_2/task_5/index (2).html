@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+		<input type="number" name="age" id="age">
+		<button onclick="main()">Send</button></br>
+		<p id="reNameAge"></p>
+<body>
+	<script type="text/javascript">
+		function main() {
+			var age = document.getElementById('age').value + "";
+			var size = age.length;
+			var text = 0;
+			if (age.charAt(size-1) == 1){
+				alert(5);
+				text = "год";
+			}
+			else if (age.charAt(size-1) > 1 && age.charAt(size-1) < 5){
+				text = "года";
+			}
+			else{
+				text = "лет";
+			}
+			//document.write(age + " " + text);
+			document.getElementById('reNameAge').innerHTML = age + " " + text;
+		}
+	</script>
+</body>
+</html>

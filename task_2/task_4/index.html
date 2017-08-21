@@ -4,24 +4,36 @@
 	<title>task_2/task_4</title>
 </head>
 <body>
+	<p>Введите время в секундах</p>
+	<form>
+	<input type="text" name="second" id="second">
+	<input type="submit" name="btn" id="btn" onclick="getInfoFromInput()">
+	</form>
 	<script type="text/javascript">
-		var seconds = prompt("Введите время секундах");
-		var h = Math.floor(seconds / 3600);
-		var m = Math.floor(seconds / 60 % 60);
-		var s = seconds % 60;
-		if (s < 10) {
-			h = '0' + h;
-			m = '0' + m;
-			s = '0' + s;
-		}
-		else if (m < 10) {
-			h = '0' + h;
-			m = '0' + m;
-		}
-		else if (h < 10) {
-			h = '0' + h;
-		}
-		document.write('Время в формате чч:мм:сс : ' + h + ":" + m + ":" + s);
+		function getInfoFromInput() {
+			var seconds = document.getElementById('second').value;
+			var h = Math.floor(seconds / 3600);
+			var m = Math.floor(seconds / 60 % 60);
+			var s = seconds % 60;
+			if (s < 10) {
+				h = '0' + h;
+				m = '0' + m;
+				s = '0' + s;
+			}
+			else if (m < 10) {
+				h = '0' + h;
+				m = '0' + m;
+			}
+			else if (h < 10) {
+				h = '0' + h;
+			}
+			document.write('Время в формате чч:мм:сс : ' + h + ":" + m + ":" + s);	
+			return r;
+			}
+		//var r = document.getElementById('input');
+		//alert(r);
+		/*var seconds = prompt("Введите время секундах");
+		*/
 	</script>
 </body>
 </html>
