@@ -4,39 +4,53 @@
 	<title>task_9</title>
 </head>
 <body>
-	<p>количевство етажей</p>
-	<input type="text" id="floor" value="4"><br>
-	<p>Количевство на лесничной клетке</p>
-	<input type="text" id="NumberOfApartments" value="2"><br>
-	<p>количество подъездов</p>
-	<input type="text" id="podezd" value="3"><br>
-	<p>квартира</p>
+	<p>Введите количество этажей дома</p>
+	<input type="text" id="floor"><br>
+	<p>Введите количество кваритир на пролете</p>
+	<input type="text" id="cc" value="3">
+	<input type="number" id="NumberOfApartments"><br>
+	<p>Введите количество подъездов</p>
+	<input type="text" id="podezd"><br>
+	<p>Введите номер квартиры</p>
 	<input type="text" id="apartment"><br>
-	<button onclick="main()">dff</button><br>
+	<button onclick="main()">Узнать</button><br>
+	<p id="result"></p>
 	<script type="text/javascript">
 		function main() {
 			var floor = document.getElementById('floor').value;
-			var NumberOfApartments = document.getElementById('NumberOfApartments').value;
+			var NumberOfApartments = document.getElementById('cc').value; 
+			//var NumberOfApartments = 4;
 			var podezd = document.getElementById('podezd').value;
 			var coun = floor * NumberOfApartments * podezd;
 			var apartment = document.getElementById('apartment').value;
 			var i =0;
 			var etag = 0;
-			var a = 2;
-			while(i < coun){
+			var a = NumberOfApartments;
+			var b = 0;
+			while(i <= coun){
 				//console.log(coun);
 				if(i == apartment){
-					console.log(etag + 1 + " //" );
+					var result = 'Квартира находится на ' + (etag + 1) + " этаже " + ' в '+ (b +1) + ' подъезде :)';
+					document.getElementById('result').innerHTML = result;
 				}
 
 				else if(i == a){
 					etag++;
-					a = a + 2;
-					//console.log(i);
+					a = a + NumberOfApartments;
+					console.log(NumberOfApartments);
+					if (etag >= floor) {
+						b++;
+						etag = 0;
+					}
 				}
 				i++;
 			}
 		}
+		var number = 789456123;
+		var cast = number.toString(10).split('');
+		for (var i=0,n=cast.length; i<n; i++){
+    	console.log(Number(cast[i]) + 1);
+}
 	</script>
 </body>
 </html>

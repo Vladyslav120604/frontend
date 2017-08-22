@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task_10</title>
+</head>
+<body>
+	<P></P>
+	<input type="text" id="number"><br><br>
+	<button onclick="main()">Узнать</button>
+	<p id="result"></p>
+	<script type="text/javascript">
+		function main() {
+			var number = document.getElementById('number').value;
+			var cast = number.toString().split('');
+			var i = 0;
+			var n = cast.length;
+			var res = 0;
+			while(i < n){
+				var res = res + Number(cast[i]);
+				i++;
+			}
+			document.getElementById("result").innerHTML = "Сумма цифр: "+res;
+		}
+	</script>
+</body>
+</html>
