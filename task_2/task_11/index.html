@@ -18,27 +18,22 @@
 	<script type="text/javascript">
 		function main() {
 			var a = document.getElementById('text').value;
-			var regExp = /https?:\/\//g;
+			var regExp = / ?https?:\/\//g;
 			var b = a.split(regExp);
 			//var c = b.split(", ");
-			/*var i = 0;
+			var i = 0;
 			b.sort();
 			b.shift();
 			while(i < b.length){
+				var r = /,$/;
+				b[i] = b[i].replace(r, "");
 				var n = document.createElement("li");
-				var size = b[i].length;
-				if(b[i].charAt(size-1) == ","){
-					b[i] = b[i].substring(0, size-1);
-					console.log(b[i]);
-					console.log("privvet");
-				}
 				n.innerHTML = b[i];
 				list.appendChild(n);
 				i++;
 
-			}*/
-			var d = b[1].replace(/,$/, "");
-			console.log(d);
+			}
+			
 		}
 	</script>
 </body>

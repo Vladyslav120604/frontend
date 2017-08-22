@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>task_2/task_1</title>
+	<title>task_1</title>
 </head>
 <body>
+	<p id="res"></p>
 	<script type="text/javascript">
 		var i = -1000;
 		var summ = 0;
 		while(i< 1000){
-			summ = summ + i+1;
+			summ = summ + i;
 			i++;
 		}
-		console.log(summ);
+		document.getElementById('res').innerHTML = "Сумма " + summ;
 	</script>
 </body>
 </html>

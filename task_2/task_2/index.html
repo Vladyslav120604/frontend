@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>tesk_2/tas</title>
+	<title>task_2</title>
 </head>
 <body>
+	<p id="res"></p>
 	<script type="text/javascript">
 		var summ = 0;
 		var i = -1000;
@@ -15,7 +16,7 @@
 			}
 		i++;
 		}
-		document.write("Сумма " + summ);
+		document.getElementById('res').innerHTML = "Сумма " + summ;
 	</script>
 </body>
 </html>

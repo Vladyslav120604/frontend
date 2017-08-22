@@ -7,8 +7,7 @@
 	<p>Введите количество этажей дома</p>
 	<input type="text" id="floor"><br>
 	<p>Введите количество кваритир на пролете</p>
-	<input type="text" id="cc" value="3">
-	<input type="number" id="NumberOfApartments"><br>
+	<input type="text" id="NumberOfApartments"><br>
 	<p>Введите количество подъездов</p>
 	<input type="text" id="podezd"><br>
 	<p>Введите номер квартиры</p>
@@ -18,8 +17,8 @@
 	<script type="text/javascript">
 		function main() {
 			var floor = document.getElementById('floor').value;
-			var NumberOfApartments = document.getElementById('cc').value; 
-			//var NumberOfApartments = 4;
+			var NumberOfApartments = document.getElementById('NumberOfApartments').value;
+			NumberOfApartments = parseInt(NumberOfApartments); 
 			var podezd = document.getElementById('podezd').value;
 			var coun = floor * NumberOfApartments * podezd;
 			var apartment = document.getElementById('apartment').value;
@@ -28,7 +27,6 @@
 			var a = NumberOfApartments;
 			var b = 0;
 			while(i <= coun){
-				//console.log(coun);
 				if(i == apartment){
 					var result = 'Квартира находится на ' + (etag + 1) + " этаже " + ' в '+ (b +1) + ' подъезде :)';
 					document.getElementById('result').innerHTML = result;
@@ -37,7 +35,6 @@
 				else if(i == a){
 					etag++;
 					a = a + NumberOfApartments;
-					console.log(NumberOfApartments);
 					if (etag >= floor) {
 						b++;
 						etag = 0;
@@ -46,11 +43,6 @@
 				i++;
 			}
 		}
-		var number = 789456123;
-		var cast = number.toString(10).split('');
-		for (var i=0,n=cast.length; i<n; i++){
-    	console.log(Number(cast[i]) + 1);
-}
 	</script>
 </body>
 </html>
