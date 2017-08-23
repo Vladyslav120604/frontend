@@ -1,0 +1,79 @@
+<!--DOCTYPE html>
+<html>
+<head>
+	<title>drop_menu</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+	<nav>
+		<li id="menu">
+			<a href="#" id="main">Select friend</a>
+			<ul>
+				<li id="first"><img src="img/1.png"><a href="#">Steev</a></li>
+				<li id="second"><img src="img/2.png"><a href="#">Bill</a></li>
+				<li id="third"><img src="img/3.png"><a href="#">Job</a></li>
+				<li id="fourth"><img src="img/4.png"><a href="#">Smeet</a></li>
+			</ul>
+		</li>
+	</nav>
+	<script type="text/javascript">
+		$("#menu").hover(function () {
+			$('#menu').css("border", "2px solid #c8dfe7");
+			$("ul").fadeIn(1);
+			$("#first").click(function () {
+				$("#main").text($("#first").children("a").text());
+				$("ul").fadeOut(1);
+			});
+			$("#second").click(function () {
+				$("#main").text($("#second").children("a").text());
+				$("ul").fadeOut(1);
+			});
+			$("#third").click(function () {
+				$("#main").text($("#third").children("a").text());
+				$("ul").fadeOut(1);
+			});
+			$("#fourth").click(function () {
+				$("#main").text($("#fourth").children("a").text());
+				$("ul").fadeOut(1);
+			});
+		}, function(){
+			$('#menu').css("border", "2px solid #ccc");
+			$('ul').fadeOut(1);
+		});
+	</script>
+</body>
+</html>-->
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Прокрутка страницы</title>
+
+  <style>
+  #more {
+    margin-top: 2000px;
+    margin-bottom: 1000px;
+  }
+  </style>
+</head>
+<body>
+  <div id="up"></div>
+
+  <a href="javascript://0" onclick="slowScroll ('#more')">Более подробно</a>
+
+  <div id="more">Больше информаци | <a href="javascript://0" onclick="slowScroll ('#up')">Навверх</a></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  function slowScroll (id) {
+    var offset = 0;
+    $('html, body').animate ({
+      scrollTop: $(id).offset ().top - offset
+    }, 500);
+    return false;
+  }
+  </script>
+</body>
+</html>

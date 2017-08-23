@@ -4,6 +4,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="font_awesome/css/font-awesome.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<title>Ш++</title>
 </head>
 <body>
@@ -16,9 +17,9 @@
 			</div>
 			<nav class="nav right">
 				<ul>
-					<li><a href="#">Products</a></li>
-					<li><a href="#">About us</a></li>
-					<li><a href="#">Contuct us</a></li>
+					<li><a href="#" onclick="anim('#iphone')">Products</a></li>
+					<li><a href="#" onclick="anim('#whiteBlock')">About us</a></li>
+					<li><a href="#" onclick="anim('#Tcontact_us')">Contuct us</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -68,7 +69,17 @@
 			<div><input type="email" name="email" required="" placeholder="Enter here your email, please"></div>
 			<div><input type="tel" name="usrtel" required="" placeholder="Enter here your phone, please"></div>
 			<div><textarea id="coments" required="" placeholder="Ask your question"></textarea></div>
-			<div><input type="submit" name="submit" id="submit" value="send email!"></div>
-		</div>	
+			<div id="more"><input type="submit" name="submit" id="submit" value="send email!"></div>
+		</div>
+	<div onclick="anim('#header')">Наверх</div>
+	<script>
+  function anim (id) {
+    var offset = 0;
+    $('html, body').animate ({
+      scrollTop: $(id).offset ().top - offset
+    }, 500);
+    return false;
+  }
+  </script>	
 </body>
 </html>
