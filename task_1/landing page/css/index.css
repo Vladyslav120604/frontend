@@ -215,3 +215,21 @@ input::-moz-placeholder{
 	color:#757575;
 	font-family: "Open sans";
 	}/* Firefox 19+ */
+
+#scroll_top{
+	width: 100px;
+	/*(position:relative;
+	bottom: 250px;*/
+}
+
+#scroll_div{
+ 	float: left;
+ 	background: none;
+ 	height: 1800px;
+ }
+
+ #scroll_div:hover{
+ 	opacity: 0.3; 
+ 	background: black;
+ 	float: left;
+ }
