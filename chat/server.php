@@ -11,8 +11,10 @@
                     echo 'redirect1';
                     $result = 'user'; 
                 }
-                echo 'invalidPass';
-                $result = 'user';
+                else{
+                    echo 'invalidPass';
+                    $result = 'user';
+                }
              }
         }
         if($result == 'tt'){

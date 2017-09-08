@@ -31,6 +31,7 @@ header{
 	height: 245px;
 	background-color: #fffecd;
 	margin-bottom:20px;
+	overflow: auto;
 }
 
 #entryField{
@@ -49,4 +50,8 @@ header{
 	border: none;
 	color:#fffecd;
 	background-color:#635960;
+}
+
+.smile{
+	height: 20px;
 }

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Easy chat</title>
-	<link rel="stylesheet" type="text/css" href="chat.css">
+	<link rel="stylesheet" type="text/css" href="css/chat.css">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
@@ -18,18 +18,46 @@
 		<div class="headerDiv" style="background-color: #eada7d"></div>
 		<div class="headerDiv" style="background-color: #fffecd"></div>
 		<div class="headerDiv" style="background-color: #7bc3ab"></div>
+
 	</header>
 	<div id="content">
 		<p id="logo">Easy chat</p>
-		<div id="chatField"></div>
-			<input type="text" name="nickname" id="nickname">
+		<div id="chatField">
+			<div id="history"></div>
+		</div>
 			<input type="text" name="mesagge" id="entryField">
 			<button id="send">send</button>
 			
 	</div>
+	
 <script type="text/javascript">
+var name = prompt('Enter name please: ');
+var regExpSmile = /:\)/g;
+var regExpSadSmile = /:\(/g;
+var smile = ' <img src="img/smile.png" class="smile"> ';
+var sadSmile = ' <img src="img/sadSmile.png" class="smile"> ';
+setInterval(function(){
+	$.ajax({
+		method: "POST",
+		url: "getHistory.php",
+		data: ({value:1}),
+		dataType: 'json',
+		success: function(data){
+			document.getElementById('history').innerHTML = '';
+			timeInMs = Math.round(new Date().getTime()/1000.0);
+			timeInMs
+			for (var i = 0; i < data.length-1; i++) {
+				if ((timeInMs - data[i]['timestamp']) < 3600) {
+					var msg = '[ ' + data[i]['time'] + ' ] ' + '<b>' +data[i]['name'] + '</b>'+ ' ' + data[i]['msg'] + '<br>';
+					$('#history').append(msg);
+				}
+			}
+		}
+	});
+}, 1);
+
 	var max = 0;
-	var interval = setInterval(function(){ 
+	setInterval(function(){ 
 		$.ajax({
 		method: "POST",
 		url: "getMsg.php",
@@ -38,53 +66,32 @@
 		success: function(data){
 			var size = data.length;
 			if (data[size - 1]['timestamp'] > max) {
-				var msg = '[ ' + data[size - 1]['time'] + ' ] ' + '<b>' +data[size - 1]['name'] + '</b>'+ ' ' + data[size - 1]['msg'] + '<br>' ;
+				var msg = '[ ' + data[size - 1]['time'] + ' ] ' + '<b>' +data[size - 1]['name'] + '</b>'+ ' ' + data[size-1]['msg'] + '<br>' ;
 				$('#chatField').append(msg);
-				//data[size - 1]['timestamp'] = -54545546545445;
-				console.log(data[size - 1]['timestamp']);
 				max = data[size-1]['timestamp']; 
 			}
 		}
 	});
 	}, 1);
-	setInterval(function(){
-		$.ajax({
-			method: "POST",
-			url: "getHistory.php",
-			data: ({value:1}),
-			dataType: 'json',
-			success: function(data){
-				var size = data.leght;
-				for (var i = 0; i < size; i++) {
-					if ((data[size-1]['timestamp'] - data[i]['timestamp']) < 6) {
-						var msg = '[ ' + data[i]['time'] + ' ] ' + '<b>' +data[i]['name'] + '</b>'+ ' ' + data[i]['msg'] + '<br>' ;
-						$('#chatField').append(msg);
-						console.log(55);
-				
-					}
-				}
-				console.log(data[size-1]['timestamp'] - data[1]['timestamp']);
-				//$('#chatField').append(data);
-			}
-		});
-	}, 1);
-	$('#send').click(function () {
-			var msg = $('#entryField').val();
-			var name = $('#nickname').val();
+
+	$("#entryField").keyup(function(event){
+	    if(event.keyCode == 13){
+	        var msg = $('#entryField').val();
 			Data = new Date();
 			Hour = Data.getHours();
 			Minutes = Data.getMinutes();
 			Seconds = Data.getSeconds();
+			var msgAfter = msg.replace(regExpSadSmile, sadSmile);
+			msgAfter = msgAfter.replace(regExpSmile, smile);
+			
 			$.ajax({
 				method: "POST",
 				url: "msg.php",
-				data: ({msg:msg, name:name, time:Hour+":"+Minutes+":"+Seconds}),
-				/*success: function (data) {
-					console.log(data);
-					$('#chatField').append(data);
-				}*/
+				data: ({msg:msgAfter, name:name, time:Hour+":"+Minutes+":"+Seconds}),
 			});
-		});
+    	$('#entryField').val('');
+    	}
+	});
 	</script>
 </body>
 </html>
