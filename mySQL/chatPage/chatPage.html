@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Easy chat</title>
+	<link rel="stylesheet" type="text/css" href="css/chat.css">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+	<header>
+		<div class="headerDiv" style="background-color: #635960"></div>
+		<div class="headerDiv" style="background-color: #8b8e59"></div>
+		<div class="headerDiv" style="background-color: #eada7d"></div>
+		<div class="headerDiv" style="background-color: #fffecd"></div>
+		<div class="headerDiv" style="background-color: #7bc3ab"></div>
+		<div class="headerDiv" style="background-color: #635960"></div>
+		<div class="headerDiv" style="background-color: #8b8e59"></div>
+		<div class="headerDiv" style="background-color: #eada7d"></div>
+		<div class="headerDiv" style="background-color: #fffecd"></div>
+		<div class="headerDiv" style="background-color: #7bc3ab"></div>
+
+	</header>
+	<div id="content">
+		<p id="logo">Easy chat</p>
+		<div id="chatField">
+			<div id="history"></div>
+		</div>
+			<input type="text" name="mesagge" id="entryField">
+			<button id="send">send</button>
+			
+	</div>
+	
+<script type="text/javascript">
+	var name = prompt('Enter name please: ', 'user');
+	var regExpSmile = /:\)/g;
+	var regExpSadSmile = /:\(/g;
+	var smile = ' <img src="img/smile.png" class="smile"> ';
+	var sadSmile = ' <img src="img/sadSmile.png" class="smile"> ';
+
+	setInterval(function(){
+		$.ajax({
+			method: "POST",
+			url: "getMsg.php",
+			data: ({value:1}),
+			dataType: 'json',
+			success: function(data){
+				document.getElementById('history').innerHTML = '';
+				timeInMs = Math.round(new Date().getTime()/1000.0);
+				for (var i = 0; i < data.length-1; i++) {
+					if ((timeInMs - data[i]['time']) < 3600) {
+						var msg = '[ ' + data[i]['time'] + ' ] ' + '<b>' +data[i]['name'] + '</b>'+ ' ' + data[i]['message'] + '<br>';
+						$('#history').append(msg);
+					}
+				}
+			}
+		});
+	}, 1);
+
+	$("#entryField").keyup(function(event){
+	    if(event.keyCode == 13){
+	        var msg = $('#entryField').val();
+			var msgAfter = msg.replace(regExpSadSmile, sadSmile);
+			msgAfter = msgAfter.replace(regExpSmile, smile);
+			$.ajax({
+				method: "POST",
+				url: "setMsg.php",
+				data: ({msg:msgAfter, name:name}),
+			});
+    	$('#entryField').val('');
+    	}
+	});
+	</script>
+</body>
+</html>
