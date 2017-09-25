@@ -1,8 +1,26 @@
+<?php  
+	$name = $_GET['name'];
+	//logging('dsfas', $name);
+	//echo $name;
+	function logging($result, $name){
+        $date = date('Y-m-d H:i:s');
+        $f = fopen('../log/info.php', 'a');
+        if (!empty($f)) {
+             //$filename  =str_replace($_SERVER['DOCUMENT_ROOT'],'',$filename);
+             $err  = "[ $date ]   $name   $result\r\n";
+              fwrite($f, $err);
+               fclose($f);
+        }
+    }
+    logging('visited a chat page', 'name');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Easy chat</title>
 	<link rel="stylesheet" type="text/css" href="css/chat.css">
+	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
@@ -26,43 +44,37 @@
 			<div id="history"></div>
 		</div>
 			<input type="text" name="mesagge" id="entryField">
-			<button id="send">send</button>
+			<button id="send" onclick='sendMsg()'>send</button>
 			
 	</div>
 	
 <script type="text/javascript">
-	var name = prompt('Enter name please: ', 'user');
-	var regExpSmile = /:\)/g;
-	var regExpSadSmile = /:\(/g;
-	var smile = ' <img src="img/smile.png" class="smile"> ';
-	var sadSmile = ' <img src="img/sadSmile.png" class="smile"> ';
-
-	setInterval(function(){
-		$.ajax({
-			method: "POST",
-			url: "getMsg.php",
-			data: ({value:1}),
-			dataType: 'json',
-			success: function(data){
-				document.getElementById('history').innerHTML = '';
-				timeInMs = Math.round(new Date().getTime()/1000.0);
-				for (var i = 0; i < data.length-1; i++) {
-					console.log(timeInMs - data[i]['time']);
-					if ((timeInMs - data[i]['time']) < 10) {
-						var msg = '[ ' + data[i+1]['jsTime'] + ' ] ' + '<b>' +data[i+1]['name'] + '</b>'+ ' ' + data[i+1]['message'] + '<br>';
-						$('#history').append(msg);
-					}
-					else{
-						console.log(timeInMs - data[i]['time'])
+	try{
+		var name = '<?php echo $name ?>';
+		var regExpSmile = /:\)/g;
+		var regExpSadSmile = /:\(/g;
+		var smile = ' <img src="img/smile.png" class="smile"> ';
+		var sadSmile = ' <img src="img/sadSmile.png" class="smile"> ';
+		setInterval(function(){
+			$.ajax({
+				method: "POST",
+				url: "getMsg.php",
+				dataType: 'json',
+				success: function(data){
+					$('#history').html('');
+					timeInMs = Math.round(new Date().getTime()/1000.0);
+					for (var i = 0; i < data.length-1; i++) {
+						if ((timeInMs - data[i]['time']) < 3600) {
+							var msg = '[ ' + data[i+1]['jsTime'] + ' ] ' + '<b>' +data[i+1]['name'] + '</b>'+ ' ' + data[i+1]['message'] + '<br>';
+							$('#history').append(msg);
+						}
 					}
 				}
-			}
-		});
-	}, 1);
+			});
+		}, 1);
 
-	$("#entryField").keyup(function(event){
-	    if(event.keyCode == 13){
-	        var msg = $('#entryField').val();
+		function sendMsg(){
+			var msg = $('#entryField').val();
 			var date = new Date();
 			var hour = date.getHours();
 			var minutes = date.getMinutes();
@@ -75,9 +87,19 @@
 				url: "setMsg.php",
 				data: ({jsTime:allTime, msg:msgAfter, name:name}),
 			});
-    	$('#entryField').val('');
-    	}
-	});
+		    $('#entryField').val('');
+	    }
+
+		$("#entryField").keyup(function(event){
+		    if(event.keyCode == 13){
+		    	sendMsg();
+	    	}
+		});
+		}
+		catch(e){
+			var dateError = new Date();
+    		console.log(dateError + ': '+ e.name + ': ' + e.message);
+		}
 	</script>
 </body>
 </html>

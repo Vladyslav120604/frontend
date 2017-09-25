@@ -1,6 +1,6 @@
 <?php  
-	/*$msg = json_decode(file_get_contents("history.json"), true);
-	echo json_encode($msg);*/
+	include '../errors/errors.php';
+
 	function printResult($result_set,$dbh){
 		$array = array();
 		while(($row = $result_set->fetch_assoc()) != false){
