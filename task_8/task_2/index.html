@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+		<input type="text" id="pattern" onkeyup="selection()">
+		<input type="text" id="flags" style="width: 50px;" onkeyup="selection()"><br><br>
+		<textarea name="textarea" id="text" id="" cols="30" rows="10" onkeyup="selection()" ></textarea>
+		<div id="outputText"></div>
+		<script type="text/javascript">
+			function selection() {
+				var pattern = document.getElementById('pattern').value;
+				var flags = document.getElementById('flags').value;
+				var regExp = new RegExp(pattern, flags);
+				var text = document.getElementById('text').value;
+				var i = 0;
+				var select = text.match(regExp);
+				console.log(regExp);
+				var output = text.replace(regExp, function () {
+					var selectAfter = '<mark>'+select[i]+'</mark>';
+					i++;
+					return selectAfter;
+				});
+				document.getElementById('outputText').innerHTML = output;
+			}
+		</script>
+</body>
+</html>
