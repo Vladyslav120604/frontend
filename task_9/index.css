@@ -1,0 +1,119 @@
+body{
+	margin:0;
+	background-image: url("img/mainImg.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+header{
+	height: 70px;
+	margin: 0;
+	border-bottom: 2px solid white;
+}
+
+#headerContent{
+	width:1440px;
+	margin: 0 auto;
+}
+
+#headerContent button{
+	/*float:right;*/
+	margin-left: auto;
+	margin-right: 0;
+	background: none;
+	color: white;
+	width: 95px;
+	height: 40px;
+	font-size: 16px;
+	border: 2px solid white;
+	border-radius: 20px; 
+}
+
+#headerContent button:hover{
+	background: white;
+	color:black;
+}
+
+#headerContent #logo{
+	font-size:36px;
+	color: white;
+	line-height: 70px;
+}
+
+#buttons{
+	width: 600px;
+	margin:220px auto;
+	text-align: center;
+}
+.cashButtons{
+	margin: 0 25px;
+	background: #0070ba;
+	color: white;
+	border: none;
+	height: 50px;
+	border-radius: 20px;
+	width: 200px;
+	font-size: 16px; 
+}
+
+.cashButtons:hover{
+	background:#005ea6;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+#whiteBlock{
+	height: 400px;
+	background-color: white;
+	margin-top: 0;
+	padding-top: 30px;
+	/*width: 1600px;
+	margin: 85px auto;*/
+}
+
+.het{
+	color:#0070ba;
+	font-size: 130px;
+	margin-bottom: 45px;
+}
+
+ #whiteBlock .title{
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+#whiteBlock .all p{
+	font-size: 18px;
+	margin-top: 45px;
+}
+
+.all{
+	position:relative;
+	/*margin: 0 auto;
+	width: 1706px;*/
+	width: 1600px;
+	margin: 0 auto;
+}
+#one{
+	float:left;
+	width:33.33%;
+	height:50px;
+	text-align: center;
+}
+#two{
+	float:left;
+	width:33.33%;
+	height:50px;
+	text-align: center;
+}
+#three{
+	float:left;
+	width:33.33%;
+	height:50px;
+	text-align: center;
+}
