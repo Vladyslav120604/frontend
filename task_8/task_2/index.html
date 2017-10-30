@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>regular experince</title>
+	<title>Regular Expression</title>
 	<script type="text/javascript" src="regexp.js"></script>
 	<link rel="stylesheet" type="text/css" href="regexp.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
 </head>
 <body>
-		<div id="content">
-			<input type="text" id="pattern" onkeyup="selection()" placeholder="Enter pattern">
-			<select id="flags" onclick="selection()">
-				<option value="g">g</option>
-				<option value="i">i</option>
-				<option value="m">m</option>
-			</select><br>
-			<textarea name="textarea" id="text" id="" onkeyup="selection()" value='<mark>dfs</mark>'></textarea>
-			<P>Result:</P>
-			<div id="outputText"></div>
-		</div>
+	<header>
+		<div id="logo">RegExp</div>
+		<div id="mainText">Online regex Tester</div>
+	</header>
+	<div id="content">
+		<p>Regular Expression</p>
+		<input type="text" id="pattern" onkeyup="selection()" placeholder="Enter pattern">
+		<select id="flags" onclick="selection()">
+			<option value="g">g</option>
+			<option value="i">i</option>
+			<option value="m">m</option>
+		</select><br>
+		<p>Test String</p>
+		<textarea name="textarea" id="text" id="" onkeyup="selection()"></textarea>
+		<P>Result:</P>
+		<div id="result"></div>
+	</div>
+		
 </body>
 </html>

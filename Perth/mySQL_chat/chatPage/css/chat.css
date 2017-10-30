@@ -1,0 +1,57 @@
+body{
+	margin: 0;
+	background-color: #b9c783
+}
+
+header{
+	font-size: 0;
+}
+
+.headerDiv{
+	display: inline-block;
+	width: 10%;
+	height: 10px;
+	
+}
+
+#logo{
+	font-family: 'Pacifico', cursive;
+	font-size: 65px;
+	color: #fffecd;
+	text-align: center;
+}
+
+#content{
+	width:480px;
+	margin: 0 auto;
+}
+
+#chatField{
+	width: 100%;
+	height: 245px;
+	background-color: #fffecd;
+	margin-bottom:20px;
+	overflow: auto;
+}
+
+#entryField{
+	width: 70%;
+	height: 35px;
+	margin-right: 5%;
+	border:none;
+	background-color: #fffecd;
+	font-size: 20px;
+}
+
+#send{
+	width: 24%;
+	height:35px;
+	font-size:20px;
+	border: none;
+	color:#fffecd;
+	background-color:#635960;
+}
+
+.smile{
+	height: 20px;
+}

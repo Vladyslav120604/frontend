@@ -3,41 +3,45 @@ function selection() {
 	var flags = document.getElementById('flags').value;
 	var text = document.getElementById('text').value;
 
-	checkInputInfo(pattern, flags, text);
+	checkingInformationIromInputFields(pattern, flags, text);
 	var regExp = new RegExp(pattern, flags);
-	var selectedText = matchTextOfRegExp(regExp, text);
-	var output = replaceTextOfRegExp(regExp, text, selectedText);
-	document.getElementById('outputText').innerHTML = output;
+	var selectedText = selectionOfSuitableText(regExp, text);
+	var output = replaceOfSuitableText(regExp, text, selectedText);
+	var text = document.getElementById('text').value
+
+	var target = document.getElementById('result').innerHTML
+	 = output;
+    
 }
 
-function checkInputInfo (pattern, flags, text){
+function checkingInformationIromInputFields (pattern, flags, text){
 	if(pattern == null){
-		console.log('var pattern = null')
+		console.log('var pattern == null')
 		return false;
 	}
 	if(flags == null){
-		console.log('var flags = null')
+		console.log('var flags == null')
 		return false;
 	}
 	if(text == null){
-		console.log('var text = null')
+		console.log('var text == null')
 		return false;
 	}
 }
 
-function matchTextOfRegExp (regExp, text){
+function selectionOfSuitableText (regExp, text){
 	var select = text.match(regExp);
 	return select;
 }
 
-function replaceTextOfRegExp (regExp, text, selectedText){
+function replaceOfSuitableText (regExp, text, selectedText){
 	var i = 0;
-	var markText = text.replace(regExp, function () {
-		var markTextPart = '<mark>'+selectedText[i]+'</mark>';
+	var markedText = text.replace(regExp, function () {
+		var markedPart = '<mark>' + selectedText[i] + '</mark>';
 		i++;
-		return markTextPart;
+		return markedPart;
 	});
-	return markText;
+	return markedText;
 } 
 
 
