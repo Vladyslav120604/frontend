@@ -7,12 +7,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 	<header>
 		<div id="headerContent">
 			<div id="logo"><span id="logoText">p</span></div>
-			<div id="menu"><i class="fa fa-bars" id="menuIcon" aria-hidden="true" onclick="alert('hello')"></i></div>
+			<div id="menuIcon"><i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i></div>
 			<div id="meetPerth">
 				<div id="mainText">Meet Perth,</div>
 				<p id="aboutPerth">A stupidly simple, flat PSD. Oh yeah, it’s <b><em>free</em></b> too!</p>
@@ -20,10 +21,22 @@
 			</div>
 			<img src="img/iphone.png" id="iphone" alt="">
 		</div>
+		<div id="menu">
+			<div id="menuContent">
+				<div id="closeMenu" onclick="hideMenu()"><i class="fa fa-times" aria-hidden="true"></i></div>
+				<div id="items">
+					<div onclick="hideMenu()"><span id="home" class="menuIcon"><i class="fa fa-home"></i></span>home</div>
+					<div onclick="slowScroll('#content')"><span class="menuIcon" ="aboutMe"><i class="fa fa-heart-o" aria-hidden="true"></i></span>about me</div>
+					<div onclick="slowScroll('#portfolio')"><span class="menuIcon"><i class="fa fa-desktop" aria-hidden="true"></i></span>portfolio</div>
+					<div onclick="slowScroll('#contact')"><span id="enterEmail" class="menuIcon"><i class="fa fa-envelope" aria-hidden="true"></i></span>drop me a line</div>
+				</div>	
+			</div>
+		</div>
 	</header>
+
 	<div id="content">
 		<div id="aboutMe">
-			<div id="contentHeader">A Longwinded Header</div>
+			<h1 id="contentHeader">A Longwinded Header</h1>
 			<div id="aboutContent">
 				<p class="pre">
 					She'll be right paddock how lets throw a ciggies. She'll be right ute to built<br> 
@@ -47,7 +60,7 @@
 	<div id="portfolio">
 		<div id="portfolioContent">	
 			<div id="portfolioText">
-				<p id="portfolioHeader">Get a Dog Up Ya’</p>
+				<h1 id="portfolioHeader">Get a Dog Up Ya’</h1>
 				<p id="portfolioText1">
 					<b><em>She'll be right paddock how lets throw a ciggies.<br> 
 					She'll be right ute to built like a doovalacky.</em><br></b>
@@ -56,8 +69,64 @@
 					We're going rack off bloody she'll be right pash. You <br>
 					little ripper tucker also get a dog up ya greenie. <br>
 				</p>
+				<button id="portfolioButton">VIEW ON DRIBBBLE <i class="fa fa-dribbble" aria-hidden="true"></i></button>
 			</div>
 		</div>
+		<img src="img/devices.png" id="devices">
 	</div>
+	<div id="donate">
+		<div id="donateContent">
+			<h1>Like What You See?</h1>
+			<button id="donateButon"> BUY ME A BEER? <i class="fa fa-beer" aria-hidden="true"></i></button>
+		</div>	
+	</div>
+	<div id="contact">
+		<div id="contantContent">
+			<div id="icons">
+				<div id="dribbble"><i class="fa fa-dribbble"></i></div>		
+				<div id="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+				<div id="twitter"><i id="twitterIcon" class="fa fa-twitter" aria-hidden="true"></i></div>
+				<div id="telegram"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></div>
+			</div>
+			<span id="contactText"><b>Newsletter Subscription</b></span>
+			<span id="enteringEmail">
+				<input type="email" placeholder="Enter Email">
+				<i class="fa fa-envelope" aria-hidden="true"></i>
+			</span>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="footerContent">
+		<span id="copyright">© 2017 <span class="blueText">Perth</span>.<em> Breeding pixels since the naughties.</em></span>
+		<div onclick="slowScroll('header')" id="toTop">
+			<i class="fa fa-angle-up" aria-hidden="true"></i>
+		</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var header = document.getElementById('headerContent');
+		var menu = document.getElementById('menu');
+		function showMenu() {
+			menu.style.display = 'block';
+			header.style.display = "none";
+
+		}
+
+		function hideMenu() {
+			menu.style.display = 'none';
+			header.style.display = "block";
+		}
+
+		function slowScroll(id){
+		    var offset = 0;
+
+		    $('html, body').animate ({
+		      scrollTop: $(id).offset ().top - offset
+		    }, 500);
+		    setTimeout(function(){
+		    	hideMenu()
+		    }, 500);
+		}
+	</script>			
 </body>
 </html>

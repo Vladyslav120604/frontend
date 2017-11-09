@@ -23,7 +23,6 @@ var atm = {
 	auth: function (info) {
 		for (var i = 0; i < atm.user.length; i++) {
 			if(atm.user[i]['login'] == info.login){
-				//console.log('invalid pass');
 				if(atm.user[i]['pin'] == info.pin){
 					atm.isUserAuth = true;
 					atm.curentUser = info.login;
@@ -34,27 +33,40 @@ var atm = {
 	},
 
 	loadCash: function (cash) {
+		if(atm.isNsumnberCorrect(cash) == false){
+			console.error('incorrect number');
+			return false;
+		}
 		if(atm.verificationForUserAuth() == true){
 			var CurrentUserNumber = atm.getCurrentUserNumber();
 			atm.user[CurrentUserNumber]['debet'] = atm.user[CurrentUserNumber]['debet'] + cash;
-			atm.allCashInAtm = allCashInAtmtm + cash;
+			atm.allCashInAtm = atm.allCashInAtmtm + cash;
 			console.log('Your balance: ' + atm.user[CurrentUserNumber]['debet'] + '$');
 		}
 		else{
-			console.log('You are not authorized');
+			console.info('You are not authorized');
 		}
-		
 	},
 
 	getCash: function (cash) {
+		var CurrentUserNumber = atm.getCurrentUserNumber();
+
+		if (cash > atm.allCashInAtm) {
+			console.info('not enough money in an ATM');
+			return false;
+		}
+
+		else if(cash > atm.user[CurrentUserNumber]['debet']){
+			console.info('not enough money in your bank account');
+			return false;
+		}
 		if(atm.verificationForUserAuth() == true){
-			var CurrentUserNumber = atm.getCurrentUserNumber();
 			atm.user[CurrentUserNumber]['debet'] = atm.user[CurrentUserNumber]['debet'] - cash;
-			atm.allCashInAtm = allCashInAtmtm - cash;
+			atm.allCashInAtm = atm.allCashInAtmtm - cash;
 			console.log('Your balance: ' + atm.user[CurrentUserNumber]['debet'] + '$');
 		}
 		else{
-			console.log('You are not authorized');
+			console.info('You are not authorized');
 		}
 	},
 
@@ -89,6 +101,16 @@ var atm = {
 		}
 		else{
 			return true
+		}
+	},
+
+	isNsumnberCorrect: function (cash){
+		var regExpForNumber = /^\d+$/g;
+		if (regExpForNumber.test(cash) == false || cash < 0) {
+			return false;
+		}
+		else{
+			return true;
 		}
 	}
 }
