@@ -1,0 +1,48 @@
+body{
+	background: url('https://previews.123rf.com/images/pepeemilio/pepeemilio1505/pepeemilio150500206/40409886-a-lot-of-people-on-the-party-as-nice-background-Stock-Photo.jpg');
+	background-size: 100%;
+}
+.draggElemem{
+	position: relative;
+	padding: 0;
+	width: auto;
+	height: 40px;
+	background: white;  
+  	border-top: 0;
+}
+
+.draggElemem:after, .draggElemem:before {
+	top: 100%;
+	left: 80%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.draggElemem:after {
+	border-top-color: white;
+	border-width: 20px;
+	margin-left: -20px;
+}
+.draggElemem:before {
+	border-top-color: white;
+	border-width: 26px;
+	margin-left: -26px;
+}
+
+.draggElemem input{
+	font-size: 20px;
+	border:none;
+	height: 100%;
+	width: 100%;
+}
+
+#plus{
+	width: 150px;
+	position: absolute;
+	bottom: 50px;
+	right:0px;
+}
