@@ -3,9 +3,9 @@ body{
 	background-size: 100%;
 }
 .draggElemem{
-	position: relative;
+	position: absolute;
 	padding: 0;
-	width: auto;
+	width: 250px;
 	height: 40px;
 	background: white;  
   	border-top: 0;

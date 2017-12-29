@@ -75,10 +75,13 @@
 			var date = new Date();
 			var hour = date.getHours();
 			hour = checkTime(hour);
+
 			var minutes = date.getMinutes();
 			minutes = checkTime(minutes);
+
 			var seconds = date.getSeconds();
 			seconds = checkTime(seconds);
+			
 			var allTime = hour+':'+minutes+':'+seconds;
 			var msgAfter = msg.replace(regExpSadSmile, sadSmile);
 			msgAfter = msgAfter.replace(regExpSmile, smile);

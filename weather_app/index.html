@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="styles/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Titillium+Web" rel="stylesheet">
+    <script type="text/javascript" src="scripts/app.js"></script>
+</head>
+<body>
+<header>
+    <h1>Moderner weather app</h1>
+</header>
+<nav>
+    <select id="selectCity" onchange="changeForecast(this)" name=" ">
+        <option value="1" class="cities">Kropyvnytskyi</option>
+        <option value="2" class="cities">Lviv</option>
+    </select>
+</nav>
+<main>
+    <div class="container">
+        <div class="now clearfix">
+            <div class="all-50">
+                <div id="date">
+                    Friday 21/04
+                </div>
+                <div id="current-temperature">
+                    24 &deg;
+                </div>
+            </div>
+            <div class="all-50">
+                <div class="weather-icon">
+                    <img id='weather-icon' src="" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="forecast" id='forecast'>
+            <div class="hourly-forecast clearfix">
+                <div class="forecast-date">1400:00</div>
+                <div class="forecast-weather">
+                    <div class="forecast-temperature" id="forecast-temperature">25 &deg;</div>
+                    <div class="forecast-icon">
+                        <img class="icon" alt="">
+                    </div>
+                <div class="moreInfo">
+                    <p>Hummidity: <span class="humm">55</span></p>
+                        <p>Wind speed: <span class="wind_speed">55</span></p>
+                </div>
+                </div>
+            </div>
+            <div class="hourly-forecast clearfix">
+                <div class="forecast-date">15:00</div>
+                <div class="forecast-weather">
+                    <div class="forecast-temperature">26 &deg;</div>
+                    <div class="forecast-icon">
+                        <img class="icon" alt="">
+                    </div>
+                    <div class="moreInfo">
+                        <p>Hummidity: <span class="humm">55</span></p>
+                        <p>Wind speed: <span class="wind_speed">55</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="hourly-forecast clearfix">
+                <div class="forecast-date">16:00</div>
+                <div class="forecast-weather">
+                    <div class="forecast-temperature">26 &deg;</div>
+                    <div class="forecast-icon">
+                        <img class="icon" alt="">
+                    </div>
+                    <div class="moreInfo">
+                        <p>Hummidity: <span class="humm">55</span></p>
+                        <p>Wind speed: <span class="wind_speed">55</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="hourly-forecast clearfix">
+                <div class="forecast-date">17:00</div>
+                <div class="forecast-weather">
+                    <div class="forecast-temperature">25 &deg;</div>
+                    <div class="forecast-icon">
+                        <img class="icon" alt="">
+                    </div>
+                    <div class="moreInfo">
+                        <p>Hummidity: <span class="humm">55</span></p>
+                        <p>Wind speed: <span class="wind_speed">55</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="hourly-forecast clearfix">
+                <div class="forecast-date">18:00</div>
+                <div class="forecast-weather">
+                    <div class="forecast-temperature">24 &deg;</div>
+                    <div class="forecast-icon">
+                        <img class="icon" alt="">
+                    </div>
+                    <div class="moreInfo">
+                        <p>Hummidity: <span class="humm">55</span></p>
+                        <p>Wind speed: <span class="wind_speed">55</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="hourly-forecast clearfix">
+                <div class="forecast-date">19:00</div>
+                <div class="forecast-weather">
+                    <div class="forecast-temperature">23 &deg;</div>
+                    <div class="forecast-icon">
+                        <img class="icon" alt="">
+                    </div>
+                    <div class="moreInfo">
+                        <p>Hummidity: <span class="humm">55</span></p>
+                        <p>Wind speed: <span class="wind_speed">55</span></p>
+                    </div>
+                </div>
+            </div>
+                        <div class="hourly-forecast clearfix">
+                <div class="forecast-date">15:00</div>
+                <div class="forecast-weather">
+                    <div class="forecast-temperature">26 &deg;</div>
+                    <div class="forecast-icon">
+                        <img class="icon" alt="">
+                    </div>
+                    <div class="moreInfo">
+                        <p>Hummidity: <span class="humm">55</span></p>
+                        <p>Wind speed: <span class="wind_speed">55</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="hourly-forecast clearfix">
+                <div class="forecast-date">16:00</div>
+                <div class="forecast-weather">
+                    <div class="forecast-temperature">26 &deg;</div>
+                    <div class="forecast-icon">
+                        <img class="icon" alt="">
+                        
+                    </div>
+                    <div class="moreInfo">
+                        <p>Hummidity: <span class="humm">55</span></p>
+                        <p>Wind speed: <span class="wind_speed">55</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="hourly-forecast clearfix">
+                <div class="forecast-date">17:00</div>
+                <div class="forecast-weather">
+                    <div class="forecast-temperature">25 &deg;</div>
+                    <div class="forecast-icon">
+                        <img class="icon" alt="">
+                        
+                    </div>
+                    <div class="moreInfo">
+                        <p>Hummidity: <span class="humm">55</span></p>
+                        <p>Wind speed: <span class="wind_speed">55</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="hourly-forecast clearfix">
+                <div class="forecast-date">18:00</div>
+                <div class="forecast-weather">
+                    <div class="forecast-temperature">24 &deg;</div>
+                    <div class="forecast-icon">
+                        <img class="icon" alt="">
+                        
+                    </div>
+                    <div class="moreInfo">
+                        <p>Hummidity: <span class="humm">55</span></p>
+                        <p>Wind speed: <span class="wind_speed">55</span></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="hourly-forecast clearfix">
+                <div class="forecast-date">19:00</div>
+                <div class="forecast-weather">
+                    <div class="forecast-temperature">23 &deg;</div>
+                    <div class="forecast-icon">
+                        <img class="icon" alt="">
+                        
+                    </div>
+                    <div class="moreInfo">
+                        <p>Hummidity: <span class="humm">55</span></p>
+                        <p>Wind speed: <span class="wind_speed">55</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+    <script type="text/javascript">
+        $('#forecast').on('click', '.hourly-forecast', function(e){
+            a = $(this).find('.moreInfo');
+            /*$(a).show();
+            $('#forecast').on('click', '.hourly-forecast', function(e){
+                $(a).fadeOut(1);
+            })*/
+            if ( a[0].style.display !== 'block' ){
+            a[0].style.display = 'block';
+            }
+            else if ( a[0].style.display == 'block' ){
+                a[0].style.display = 'none';
+            }
+        });
+        
+    </script>
+</body>
+</html>

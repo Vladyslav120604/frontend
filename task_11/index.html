@@ -2,65 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Draggable</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-    window.onload = function(){
-      draggable('one');
-    }
-
-    var dragObj = null;
-    function draggable(id){
-        obj = document.getElementById(id);
-        console.log(obj.childNodes[1]);
-        obj.style.position = "absolute";
-        obj.ondblclick = function(e){
-            obj.childNodes[1].style.cursor = 'move';
-            xInDiv = e.offsetX==undefined?e.layerX:e.offsetX;
-            yInDiv = e.offsetY==undefined?e.layerY:e.offsetY;
-            dragObj = obj;
-        }
-    }
-     
-    document.onmouseup = function(e){
-        obj.childNodes[1].style.cursor = 'text';
-        dragObj = null;
-    };
-
-    document.onmousemove = function(e){
-        var x = e.pageX;
-        var y = e.pageY;
-
-        if(dragObj == null)
-            return;
-
-        dragObj.style.left = x - xInDiv +"px";
-        dragObj.style.top= y - yInDiv +"px";
-    };
-
-
-    function addNewDraggDiv (){
-        var div = document.createElement('div'); 
-        div.setAttribute('class', 'draggElemem');
-        document.body.appendChild(div);
-        div.innerHTML = '<input></input>';
-        
-
-
-        
-    }
-
-    </script>
 </head>
 <body>
- 
-<div  id='one' class="draggElemem">
-    <input type="" class="input">
-</div>
-<img id="plus" src="plus.png" onclick="addNewDraggDiv()" alt="">
- 
+    <div id="draggElements" > 
+    </div>
+    <img id="plus" src="plus.png">
+    <script src="index.js"></script>
 </body>
 </html>
