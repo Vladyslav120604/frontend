@@ -1,0 +1,186 @@
+body{
+	background:#ecf2f6;
+}
+
+.navbar-brand{
+	font-weight:700;
+}
+
+/*
+.indicators-content div{
+	font-size: 14px;
+	line-height:46px;
+	height: auto;
+	border: 2px solid black;
+	margin: 50px 30px 0 30px;
+
+    position: relative;    
+    display: flex;
+    align-items: center;
+
+}
+*/
+b{
+	margin-right:5px;
+}
+/*
+.indicators-content .fa{
+	margin-right: 5px;
+    font-size: 20px;
+
+	font-size: 25px;
+}
+*/
+.page-title-box{
+	background:white;
+	padding: 20px;
+	margin: 0 0 20px 0;
+}
+
+.page-title-box h4{
+	margin:0;
+	font-size:1.2rem;
+}
+
+
+.indicators{
+	margin-bottom:20px;
+	padding:20px;
+	background: white;
+	border-radius:5px;
+}
+
+.indicators h6{
+	margin-bottom:20px;
+	color:rgb(134, 142, 150);
+}
+
+.indicators h2{
+	margin:0;
+}
+
+.indicators i{
+	color:#0866c6;
+	font-size:30px;
+}
+
+/* users */
+
+
+.users h4{
+	margin-bottom:15px;
+	font-size: 1.2rem;
+	color:#212529;
+}
+
+.users{
+	padding:20px;
+	margin-bottom:20px;
+	background: white;
+	border-radius: 5px;
+}
+
+.users .btn{
+	margin-bottom: 15px;
+	border-radius: 30px;
+	height: 40px;
+}
+
+.users .input-group{
+	height: 40px;
+}
+
+
+.searchIconDiv{
+	border-bottom-left-radius:30px;
+	border-top-left-radius:30px;
+}
+
+.searchInput{
+	border-bottom-right-radius:30px;
+	border-top-right-radius:30px;
+}
+
+.users h1{
+	font-size: 25px;
+}
+
+table .fa{
+	margin: 0 6px;
+	font-size:20px;
+}
+
+/* sidebar */
+
+.sidebar{
+	margin:0;
+	height: auto;
+	background: #0866c6;
+	border-radius: 5px;
+}
+
+.weather{
+	padding:20px;
+}
+
+.money{
+	background: white;
+	padding:20px;
+}
+
+.sidebar h6{
+	font-size:20px;
+	color:white;
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+.date{
+	color:rgba(255, 255, 255, 0.6);
+}
+
+.tem{
+	color: white;
+}
+
+.icon{
+	padding: 0 0 0 15px;
+}
+
+.money i{
+	font-size:40px;
+}
+
+.rate{
+	margin-left:15px;
+}
+
+.rateTitle{
+	margin-left:;
+	font-weight:500;
+	font-size:12px;
+	color:#0866c6;
+	text-transform: uppercase;
+}
+
+.cash{
+	font-weight:700;
+	font-size:1rem;
+}
+
+.sidebarInfo{
+	font-size: 20px;
+	text-align: center;
+	height: 50px;
+	border-bottom: 2px solid #ccc;
+}
+
+/* modal */
+
+.modalInput{
+	margin:15px 0;
+}
+
+input, button:hover{
+	cursor:pointer;
+}

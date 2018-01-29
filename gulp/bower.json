@@ -1,0 +1,25 @@
+{
+  "name": "node",
+  "description": "my first project",
+  "main": "index.js",
+  "authors": [
+    "Vlad Sergeev"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Vladyslav120604/frontend",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  },
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.2.1"
+  }
+}

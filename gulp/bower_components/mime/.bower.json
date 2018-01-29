@@ -1,0 +1,15 @@
+{
+  "name": "mime",
+  "homepage": "https://github.com/broofa/node-mime",
+  "version": "2.2.0",
+  "_release": "2.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.2.0",
+    "commit": "9fa0a628bebebd711edbd0b5c925ab6f527c2b33"
+  },
+  "_source": "https://github.com/broofa/node-mime.git",
+  "_target": "^2.2.0",
+  "_originalSource": "mime",
+  "_direct": true
+}

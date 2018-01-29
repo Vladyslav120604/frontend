@@ -1,0 +1,207 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<link rel='stylesheet' href='css/index.css'>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		
+		<title>bootstrap</title>
+	</head>
+	<body>
+
+		<nav class="navbar navbar-toggleable-lg  navbar-dark" style="background-color: #2b3d51;">
+		  <a class="navbar-brand mb-0" href="#">Bootstrap</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">Dashboard<span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Link</a>
+		      <li class="nav-item">
+		        <a class="nav-link disabled" href="#">Settings</a>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+
+		<div class="page-title-box">
+			<h4 class='page-title'>Dashboard</h4>
+		</div>
+
+		<div class="container-fluid">
+			
+			<div class="row">
+				<div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+					<div class="indicators">
+						<i class="fa fa-user-circle-o float-right" aria-hidden="true"></i>
+						<h6>VISITORS</h6>
+						<h2 class="m-b-10">19.061</h2>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+					<div class="indicators">
+						<i class="fa fa-share float-right" aria-hidden="true"></i>
+						<h6>SHARES</h6>
+						<h2 class="m-b-10">5.215</h2>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+					<div class="indicators">
+						<i class="fa fa-usd float-right" aria-hidden="true"></i>
+						<h6>ORDERS</h6>
+						<h2 class="m-b-10">$3.120</h2>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+					<div class="indicators">
+						<i class="fa fa-envelope float-right" aria-hidden="true"></i>
+						<h6>MESSAGES</h6>
+						<h2 class="m-b-10">102</h2>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="push-xs-12 col-lg-12 col-xl-9">
+					<div class="users">
+						<div id="mainline" class="row">
+							<h4 class='col-md-2'>Users</h4>
+							<div class="col-md-2">
+								<button class="btn btn-success">Add new</button>
+							</div>
+							<div class="input-group offset-md-3 col-md-5 mb-3">
+								<div class="input-group-prepend">
+							    	<span class="input-group-text searchIconDiv" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+								</div>
+						    	<input type="text" class="form-control searchInput" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon1">
+							</div>
+						</div>
+						<div class="table-responsive">
+						<table class="table table-bordered mb-0">
+						  <thead>
+						    <tr>
+						      <th>#</th>
+						      <th>Full name</th>
+						      <th>Username</th>
+						      <th>Created</th>
+						      <th>Last login</th>
+						      <th>E-mail</th>
+						      <th>Actions</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">1</th>
+						      <td>Sergey Ivanov</td>
+						      <td>sergey</td>
+						      <td>02.01.11</td>
+						      <td>25.02.11</td>
+						      <td>sergey@mail.ru</td>
+						      <td scope='row'>
+						      	<i data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" class="fa fa-pencil" aria-hidden="true"></i>
+						      	<i class="fa fa-trash" aria-hidden="true"></i>
+						      </td>
+						    </tr>
+						    <tr>
+						      <th scope="row">2</th>
+						      <td>Vlad Sergeev</td>
+						      <td>vladsergeev</td>
+						      <td>12.06.16</td>
+						      <td>05.12.16</td>
+						      <td>vlad@mail.ru</td>
+						      <td scope='row'>
+						      	<i data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" class="fa fa-pencil" aria-hidden="true"></i>
+						      	<i class="fa fa-trash" aria-hidden="true"></i>
+						      </td>
+						    </tr>
+						    <tr>
+						      <th scope="row">3</th>
+						      <td>Nastya Petrova</td>
+						      <td>nastya</td>
+						      <td>04.11.15</td>
+						      <td>06.12.15</td>
+						      <td>nastya@mail.ru</td>
+						      <td scope='row'>
+						      	<i data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" class="fa fa-pencil" aria-hidden="true"></i>
+						      	<i class="fa fa-trash" aria-hidden="true"></i>
+						      </td>
+						    </tr>
+
+						  </tbody>
+						</table>
+						</div>
+					</div>		
+				</div>
+				<div class="pull-xs-12 col-lg-12 col-xl-3">
+					<div class="sidebar">
+						<div class="weather">
+							<h6>Kirovograd <i class="fa fa-map-marker" aria-hidden="true"></i></h6>
+							<p class='date'>Saturday, the 27th of January</p>
+							<h3 class='tem'>-13&deg;</h3>
+						</div>
+						<div class='money'>
+							<div class="row">
+								<div class="col-md-6 row">
+									<div class="col col-md-3 icon">
+										<i class="fa fa-bar-chart success" style='color:#5e37a6;' aria-hidden="true"></i>
+									</div>
+									
+									<div class="col col-md-8 rate">
+										<span class='rateTitle'>dollar rate</span><br>
+										<span class='cash'>27.3</span>
+									</div>									
+								</div>
+								<div class="col-md-6 row">
+									<div class="col col-md-3 icon">
+										<i class="fa fa-bar-chart" style='color:#17a2b8;' aria-hidden="true"></i>
+									</div>
+									
+									<div class="col col-md-8 rate">
+										<span class='rateTitle'>euro rate</span><br>
+										<span class='cash'>30.2</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Edit user</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+		            <input type="text" class="form-control modalInput" id="fullName" placeholder='Full name'>
+		            <input type="text" class="form-control modalInput" id="username" placeholder='User name'>
+		            <input type="text" class="form-control nodalInput" id="password" placeholder='Password'>
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-success">Save</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</body>
+</html>
