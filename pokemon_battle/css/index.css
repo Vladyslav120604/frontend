@@ -1,0 +1,71 @@
+.navbar{
+	background: #29b6f6;
+}
+
+.text-battle{
+	color:#ff9800;
+	margin:50px 0;
+}
+
+.logo{
+	color: white;
+	font-size: 35px;
+}
+
+.form-control{
+	box-shadow:none;
+	border:none;
+	border-radius:0;
+	border-bottom:2px solid black;
+	margin-bottom:15px;
+}
+
+.form-control:focus {
+	box-shadow:none;
+    outline: 0;
+    outline-offset: 0;
+}
+
+#pokeball{
+	padding:20px;
+	box-shadow:0px 0px 24px 0px #c0c0c0;;
+	margin-bottom:30px;
+}
+
+
+#pokeball img{
+	text-align: center;
+	width:100%;
+}
+
+#winnerName{
+	margin-top: 30px;
+	font-size: 25px;
+	text-align: center;
+}
+
+#btn-block{
+	text-align:center;
+}
+
+.btn{
+	width:100px;
+	height:50px;
+	background: #ff9800;
+	color:white;
+	margin:0;
+}
+
+#errorBlock{
+	margin-top: 30px;
+	font-size: 25px;
+	text-align: center;
+	color:red;
+}
+
+#levelUpBlock{
+	margin-top: 30px;
+	font-size: 25px;
+	text-align: center;
+	color:#06a806;
+}

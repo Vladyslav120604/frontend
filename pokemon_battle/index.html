@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel='stylesheet' href='css/index.css'>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="js/index.js" type='text/javascript'></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<meta charset="UTF-8">
+
+	<title>Pokemon GO</title>
+</head>
+<body>
+	<nav class="navbar navbar-light">
+  		<div class="container">
+	  		<a class="navbar-brand" href="#">
+				<i class="fab fa-gitlab logo"></i>
+			</a>
+    	</div>
+  		</a>
+	</nav>
+
+	<div class='text-battle'>
+		<h1 class="text-center">Pockemon battle <i class="fab fa-gitlab"></i></h1>
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4">
+				<form class='player1' action="">
+					<div class="form-group-">
+						<label for="userName1"><small class='text-secondary'>Player 1</small></label>
+    					<input type="text" class="form-control" id="user1Name" aria-describedby="emailHelp"">
+					</div>
+					<div class="form-group-sm">
+					    <label for="ChooseElement"><small class='text-secondary'>Materealize Select</small></label>
+					    <select class="form-control" id="user1Element">
+					    	<option value='0'>Choose element</option>
+				            <option value='5'>Fire</option>
+				            <option value='4'>Wood</option>
+				            <option value='3'>Electric</option>
+					        <option value='2'>Water</option>
+				    	</select>
+				  </div>
+				  <p>Exeperience</p>
+				  <input type="range" class='form-control' value='0' id='user1Experience' min="0" max="10000" step="20">
+				</form>
+			</div>
+			<div class="col-md-4">
+				<div id='pokeball'>
+					<img src="img/pokeball.png" alt="">
+					<div id="winnerName"></div>
+					<div id="errorBlock"></div>
+					<div id="levelUpBlock">	</div>
+				</div>
+				<div id='btn-block'>
+					<button class='btn btn-warning' id='fight' >FIGHT!</button>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<form class='player2' action="">
+					<div class="form-group-">
+						<label for="userName1"><small class='text-secondary'>Player 2</small></label>
+    					<input type="text" class="form-control" id="user2Name" aria-describedby="emailHelp"">
+					</div>
+					<div class="form-group-sm">
+					    <label for="ChooseElement"><small class='text-secondary'>Materealize Select</small></label>
+					    <select class="form-control" id="user2Element" >
+					    	<option value='0'>Choose element</option>
+				            <option value='5'>Fire</option>
+				            <option value='4'>Wood</option>
+				            <option value='3'>Electric</option>
+					        <option value='2'>Water</option>
+					        
+				    	</select>
+				  </div>
+				  <p>Exeperience</p>
+				  <input type="range" class='form-control' value='0' min="0" max="10000" step="20" id='user2Experience'>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('button').click(function() {
+			getPlayersInfo();
+			/*$('#winnerName').innerHTML = '';
+			$('#errorBlock').remove();
+			$('#levelUpBlock').innerHTML = '';*/
+
+
+		});
+		function getPlayersInfo(){
+			var name1 = $('#user1Name').val();
+			var element1 = $('#user1Element').val();
+			var experience1 = $('#user1Experience').val();
+			var elementVal1 = $('#user1Element option:selected').val()
+
+			var name2 = $('#user2Name').val();
+			var element2 = $('#user2Element').val();
+			var experience2 = $('#user2Experience').val()
+			var elementVal2 = $('#user2Element option:selected').val()
+			$(" option").filter(":selected").val();
+
+
+			player1 = new Player(name1, element1, experience1, 'player1', elementVal1);
+			player2 = new Player(name2, element2, experience2, 'player2', elementVal2)
+			getWinner(player1, player2);
+		}
+
+		function getWinner(player1, player2){
+			var arr = [player1, player2];
+
+			if(player1.level > player2.level){
+				winner(player1);
+				resetPlayer(player2, player1);
+			}
+
+			
+
+			else if(player1.level < player2.level){
+				winner(player2);
+				resetPlayer(player1, player2);
+			}
+
+			else if(player1.level == player2.level){
+
+				if((player1.elementVal + 2) == player2.elementVal || (player1.elementVal - 2) == player2.elementVal){
+					var rand = Math.floor(Math.random() * arr.length);
+					winner(arr[rand]);
+					if(rand == 0){
+						resetPlayer(arr[1]);
+					}
+					else{
+						resetPlayer(arr[0]);
+					}
+					console.log('rand win');
+				}
+
+
+				else if(player1.elementVal - 1  ==  player2.elementVal){
+					winner(player1);
+					resetPlayer(player2, player1);
+				}
+
+				else if(player1.elementVal + 1 == player2.elementVal){
+					winner(player2);
+					resetPlayer(player1, player2);
+				}
+
+				else if(player1.elementVal < player2.elementVal){
+					winner(player1);
+					resetPlayer(player1, player2);
+				}
+
+				else if(player1.elementVal > player2.elementVal){
+					winner(player2);
+					resetPlayer(player2, player1);
+				}
+
+				else{
+					$('#errorBlock').text('ERROR!');
+				}
+				
+			}
+		}
+
+		function winner(winner){
+			$('.' + winner.className + ' input').prop('disabled', true);
+			$('.' + winner.className + ' select').prop('disabled', true);
+			$('.' + winner.className + ' select').css('cursor', 'not-allowed');
+			$('.' + winner.className + ' input').css('cursor', 'not-allowed');
+
+			winner.experience += 500;
+			$('.' + winner.className + ' input[type="range"]').val(winner.experience);
+
+
+			var num = winner.experience/1000;
+			var res = (num ^ 0) === num;
+			if(res == true){
+				levelUp(winner);
+			}
+			console.log()
+
+			console.log(winner.element);
+			console.log(winner.className);
+			console.log(winner.experience);
+
+
+
+			showWinner(winner);
+		}
+
+		var Player = function(name, element, experience, className, elementVal){
+			this.name = name
+			this.element = element
+			this.experience = +experience;
+			this.level = Math.floor(experience / 1000);
+			this.className = className;
+			this.elementVal = +elementVal;
+		}
+
+		function resetPlayer(loser){
+			$('.' + loser.className + ' input').prop('disabled', false);
+			$('.' + loser.className + ' select').prop('disabled', false);
+			$('.' + loser.className + ' input[type="text"]').val('');
+			$('.' + loser.className + ' select').prop('selectedIndex', 0);
+			$('.' + loser.className + ' select').css('cursor', 'default');
+			$('.' + loser.className + ' input').css('cursor', 'default');
+			delete loser;
+		}
+
+		function showWinner(winner){
+			$('#winnerName').text(winner.name  + ' win!');
+		}
+
+		function levelUp(player){
+			$('#levelUpBlock').text(player.name  + ' level up!');
+		}
+
+		$('input, select').on('mousedown',function(){
+			$('#winnerName').text('');
+			$('#errorBlock').text('');
+			$('#levelUpBlock').text('');
+		})
+	</script>
+</body>
+</html>
